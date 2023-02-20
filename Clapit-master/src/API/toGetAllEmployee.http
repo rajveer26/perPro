@@ -1,0 +1,7 @@
+//To get all empl
+GET localhost:5000/api/v1/Employee/
+
+
+
+
+

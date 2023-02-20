@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  #myapp:
+   # image: clapit-master-server
+  server:
+    build: .
+    ports:
+      - '8000:5000'
+  db:
+    image: postgres:latest
+    ports:
+      - '32760:32768'
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgrespw'
+      POSTGRES_DB: 'Personaldb'
+      PGDATA : /var/lib/postgresql/data
+      restart: always
+    volumes:
+      - data:/var/lib/postgresql
+  adminer:
+      image: adminer
+      restart: always
+      ports:
+        - '9999:8080'
+volumes:
+  data:

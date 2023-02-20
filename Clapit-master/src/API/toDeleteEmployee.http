@@ -1,0 +1,2 @@
+//To delete empl
+DELETE localhost:5000/api/v1/Employee/1124
